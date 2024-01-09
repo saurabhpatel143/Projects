@@ -1,0 +1,89 @@
+<html>
+<head> 
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>3D Text Example</title>
+  <style> 
+    body {
+      background-image:image("https://www.bhagwanwallpapers.com/uploads/2023/03/lord-rama-god-rama-bhagwan-ram-hd-image-pic-for-phone-mobile-wallpaper-ufoa-1680189562.jpg");
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .text-container {
+      perspective: 800px;
+      text-align: center;
+    }
+    .text {
+      font-size: 3em;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    
+      text-shadow: #a1081f;
+      position: relative;
+      display: inline-block;
+      transform-style: preserve-3d;
+      animation: rotateText 5s infinite linear;
+      
+        text-shadow:
+        rgb(233, 241, 12) 10px -2px 20px,
+       rgb(193, 12, 230) 10px -2px 20px,
+        rgb(208, 15, 153) 10px -2px 20px,
+        rgb(225, 109, 14) 10px -2px 20px;
+    }
+    .text:before,
+    .text:after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #3498db;
+      overflow: hidden;
+      clip: rect(0, auto, 0, 0);
+      transform: translateZ(-1px);
+      backface-visibility: hidden;
+    }
+    .text:before {
+      color: #e74c3c;
+      animation: glitch1 0.3s infinite linear alternate-reverse;
+    }
+    .text:after {
+      color: #2ecc71;
+      animation: glitch2 0.3s infinite linear alternate-reverse;
+    }
+
+    @keyframes rotateText {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
+
+    @keyframes glitch1 {
+      2%, 64% { transform: translate(2px,0) skew(0deg); }
+      4%, 60% { transform: translate(-2px,0) skew(0deg); }
+      62% { transform: translate(0,0) skew(30deg); }
+    }
+
+    @keyframes glitch2 {
+      2%, 64% { transform: translate(-2px,0) skew(0deg); }
+      4%, 60% { transform: translate(2px,0) skew(0deg); }
+      62% { transform: translate(0,0) skew(-30deg); }
+    }
+    h1{margin-top: 20px; color: #418d07;}
+    .text1{margin-top: 10px;   color:rgb(226, 96, 96);font-size: 40px;} 
+  </style>
+</head>
+<body background="https://www.bhagwanwallpapers.com/uploads/2023/03/lord-rama-god-rama-bhagwan-ram-hd-image-pic-for-phone-mobile-wallpaper-ufoa-1680189562.jpg">
+  <div class="text-container">
+    
+    <i class="fa-brands fa-first-order-alt fa-spin fa-2xl" style="color: #a1081f;"></i>
+     
+    <div class="text1" data-text="3D Text">22 जनवरी 2024</div><br>
+    <div class="text" data-text="3D Text"> जय श्री राम</div>
+    <h1 class="text2"> 🚩हिन्दू🚩</h1>
+    
+  </div>
+</body>
+</html>
